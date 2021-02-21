@@ -67,6 +67,8 @@ output:
 ---
 
 # Introduction
+If you want to include numbers do it like that: $1, 2, 4$ and not like that 1, 2, 4. Some useful mathematical expressions are $x \leq 2$, $x \geq 2$, $\frac{1}{2}$
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris scelerisque velit augue, eu rutrum urna scelerisque malesuada. Suspendisse potenti. Sed a diam nec ex sodales gravida ac sed eros. Vivamus tincidunt velit vitae orci rutrum, eget hendrerit ligula lobortis. Mauris eget venenatis orci. Donec scelerisque erat ac rutrum mollis. Nunc a ligula urna. Pellentesque vehicula odio sed nunc ullamcorper, luctus rhoncus neque ultrices. Donec pulvinar felis non malesuada blandit. Cras iaculis, est id porta facilisis, diam lorem commodo arcu, eu mollis ipsum quam et urna.
 
 Nam finibus lobortis auctor. Morbi sed mattis magna. Fusce semper luctus fermentum. Nam quis luctus ipsum. Morbi dignissim urna non hendrerit rutrum. Phasellus ac dui venenatis, maximus mauris maximus, semper orci. Maecenas dui eros, aliquam sit amet eros nec, imperdiet tincidunt tellus. Pellentesque erat velit, condimentum condimentum neque dapibus, aliquam mattis turpis. Maecenas efficitur ligula a mauris luctus sollicitudin. Morbi nec nulla id elit elementum hendrerit ac tempor sem. Nulla vel odio metus. In at metus eget libero consequat ornare. Duis porttitor faucibus tellus sit amet mollis. Sed viverra, tellus eu pharetra porttitor, neque nibh malesuada nunc, at sodales metus tellus sed turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus [@piran_learning-driven_2019].
@@ -80,10 +82,38 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris scelerisque veli
 
 As seen in equation \@ref(eq:logistic), ...
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris scelerisque velit augue, eu rutrum urna scelerisque malesuada. Suspendisse potenti. Sed a diam nec ex sodales gravida ac sed eros. Vivamus tincidunt velit vitae orci rutrum, eget hendrerit ligula lobortis. Mauris eget venenatis orci. Donec scelerisque erat ac rutrum mollis. Nunc a ligula urna. Pellentesque vehicula odio sed nunc ullamcorper, luctus rhoncus neque ultrices. Donec pulvinar felis non malesuada blandit. Cras iaculis, est id porta facilisis, diam lorem commodo arcu, eu mollis ipsum quam et urna. In Figure \@ref(fig:testFigure)
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris scelerisque velit augue, eu rutrum urna scelerisque malesuada. Suspendisse potenti. Sed a diam nec ex sodales gravida ac sed eros. Vivamus tincidunt velit vitae orci rutrum, eget hendrerit ligula lobortis. Mauris eget venenatis orci. Donec scelerisque erat ac rutrum mollis. Nunc a ligula urna. Pellentesque vehicula odio sed nunc ullamcorper, luctus rhoncus neque ultrices. Donec pulvinar felis non malesuada blandit. Cras iaculis, est id porta facilisis, diam lorem commodo arcu, eu mollis ipsum quam et urna. 
+
+This links to Figure \@ref(fig:testFigure). If you click, it will take you to it.
 
 ```{r testFigure, echo=FALSE, fig.cap="This is a caption", out.width = '100%'}
 knitr::include_graphics("Figures/image.jpg")
+```
+
+# Results
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris scelerisque velit augue, eu rutrum urna scelerisque malesuada. Suspendisse potenti. Sed a diam nec ex sodales gravida ac sed eros. Vivamus tincidunt velit vitae orci rutrum, eget hendrerit ligula lobortis. Mauris eget venenatis orci. Donec scelerisque erat ac rutrum mollis. Nunc a ligula urna. Pellentesque vehicula odio sed nunc ullamcorper, luctus rhoncus neque ultrices. Donec pulvinar felis non malesuada blandit. Cras iaculis, est id porta facilisis, diam lorem commodo arcu, eu mollis ipsum quam et urna.
+
+This refers to Table \@ref(tab:table). If you click it will take you to it.
+
+```{r table, echo=FALSE}
+
+df <- data.frame(
+  Text    = c("Row 1", "Row 2", "Row 4"), # The names cannot have spaces
+  Values1 = rnorm(3), # This creates 3 random numbers
+  Values2 = rnorm(3),
+  Values3 = rnorm(3),
+  Values4 = rnorm(3)
+)
+
+knitr::kable(
+  df, 
+  format   = "latex", 
+  linesep  = c("", "", "\\addlinespace"), 
+  booktabs = TRUE,
+  caption  = "This is a caption for the table",
+  col.names = c("Name 1", "Name 2", "Name 3", "Name 4", "Name 5")
+)
+
 ```
 
 \newpage
